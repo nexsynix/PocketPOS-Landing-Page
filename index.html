@@ -1,188 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PocketPOS</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-        <img src="./images/logo.png" alt="Creamio-logo" class="logo">
-        <nav>
-            <ul>
-                <li>
-                    <a href="#" class="active">Home</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Features</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
-        </nav>
-        <div class="menu-icons">
-            <a href="#">
-                <svg width="46" height="47" viewBox="0 0 46 47" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="0.75" y="1.25" width="44.5" height="44.5" rx="22.25" stroke="#7D2501" stroke-width="1.5"/>
-                    <path d="M26.9137 17C25.2103 17 23.7395 17.9975 23.0003 19.4525C22.2612 17.9975 20.7903 17 19.087 17C16.6453 17 14.667 19.0475 14.667 21.5675C14.667 24.0875 16.1812 26.3975 18.1378 28.295C20.0945 30.1925 23.0003 32 23.0003 32C23.0003 32 25.812 30.2225 27.8628 28.295C30.0503 26.24 31.3337 24.095 31.3337 21.5675C31.3337 19.04 29.3553 17 26.9137 17Z" stroke="#7D2501" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </a>
-        </div>
-    </header>
 
-    <div id="section1">
-      <div class="bg-hero1">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PocketPOS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Outfit:wght@100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
 
-        <div class="hero-tag tag-tl">
-          <span>✨ Premium</span>
-        </div>
+<body>
+  <header>
+    <img src="./images/logo.png" alt="PocketPOS-logo" class="logo">
+    <nav>
+      <ul>
+        <li>
+          <a href="#" class="active">Home</a>
+        </li>
+        <li>
+          <a href="#">Features</a>
+        </li>
+        <li>
+          <a href="#">Pricing</a>
+        </li>
+        <li>
+          <a href="#">Contact</a>
+        </li>
+      </ul>
+    </nav>
 
-        <div class="hero-tag tag-tr">
-          <span>🎧 Audira Max</span>
-        </div>
+    <div class="menu-icons">
+      <a href="#" class="download-btn">
+        <svg width="46" height="47" viewBox="0 0 46 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="svg-primary-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#e8420c" />
+              <stop offset="50%" stop-color="#f47a29" />
+              <stop offset="100%" stop-color="#f5c800" />
+            </linearGradient>
+          </defs>
 
-        <h1 class="heading">Pocket <br><span class="sub-heading">Point-of-Sales</span></h1>
+          <rect x="0.75" y="1.25" width="44.5" height="44.5" rx="22.25" stroke="url(#svg-primary-gradient)"
+            stroke-width="1.5" />
 
-        <div class="hero-tag tag-br">
-          <span>$200,000</span>
-        </div>
-        
-      </div>
+          <g class="icon-default">
+            <path
+              d="M24 14C24 18.1421 21.3137 22 16.8954 22C21.3137 22 24 25.8579 24 30C24 25.8579 26.6863 22 31.1046 22C26.6863 22 24 18.1421 24 14Z"
+              stroke="url(#svg-primary-gradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+              d="M33.5 13C33.5 14.933 32.25 16.5 30.25 16.5C32.25 16.5 33.5 18.067 33.5 20C33.5 18.067 34.75 16.5 36.75 16.5C34.75 16.5 33.5 14.933 33.5 13Z"
+              stroke="url(#svg-primary-gradient)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+              d="M13.5 26C13.5 27.933 12.25 29.5 10.25 29.5C12.25 29.5 13.5 31.067 13.5 33C13.5 31.067 14.75 29.5 16.75 29.5C14.75 29.5 13.5 27.933 13.5 26Z"
+              stroke="url(#svg-primary-gradient)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+
+          <g class="icon-hover">
+            <path d="M23 15V29M23 29L17 23M23 29L29 23" stroke="#fff" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M14 33H32" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+          </g>
+        </svg>
+
+        <span class="download-text">Download</span>
+      </a>
     </div>
+  </header>
 
-    <div id="main" class="w-full">
-      <img src="./images/brown.png" alt="" id="headphone" />
+  <div id="section1">
+    <div class="bg-hero1">
 
-      
-
-      <div id="section2">
-        <div class="content-wrapper">
-          <h2 class="heading">True Carity</h2>
-          <p>
-            Engineered for clarity, comfort, and immersive sound — Audira
-            redefines your listening experience with style and performance
-            in perfect harmony.
-          </p>
-          <a href="" class="btn radius">Buy Now</a>
-        </div>
-        <div class="feature-wrapper">
-          <div class="feature-box radius">
-            <div class="feature-name">Crystal-Clear Audio</div>
-            <div class="feature-detail">
-              Hear every detail with balanced bass and studio-quality mids
-              and highs.
-            </div>
-          </div>
-          <div class="feature-box radius">
-            <div class="feature-name">All-Day Comfort</div>
-            <div class="feature-detail">
-              Lightweight build with plush ear cushions and ergonomic fit.
-            </div>
-          </div>
-          <div class="feature-box radius">
-            <div class="feature-name">40+ Hour Battery Life</div>
-            <div class="feature-detail">
-              Long-lasting performance, wherever you go.
-            </div>
-          </div>
-        </div>
+      <div class="hero-tag tag-tl">
+        <span>✨ Cloud-Based</span>
       </div>
 
-      <div id="section3">
-        <h2 class="heading">Masterbeat</h2>
-        <div class="content-wrapper">
-          <video
-            width="500"
-            height="auto"
-            autoplay
-            loop
-            muted
-            class="radius"
-          >
-            <source src="./images/video.mp4" type="video/mp4" />
-          </video>
-          <div class="content">
-            <p>
-              Crafted for the modern audiophile, Audira headphones deliver
-              sound so rich, it pulses through your senses. From crisp highs
-              to deep, rolling bass—you don’t just hear it, you feel it.
-            </p>
-            <p>
-              Whether you're in focus mode or free flow, the precision-tuned
-              audio adapts to your pace. With Masterbeat, music becomes your
-              personal soundtrack—bold, immersive, unforgettable.
-            </p>
-          </div>
-        </div>
+      <div class="hero-tag tag-tr">
+        <span>📱 PocketPOS</span>
       </div>
 
-      <div id="section4">
-        <img src="./images/img1.jpeg" alt="" class="img1 radius" />
-        <img src="./images/img2.jpeg" alt="" class="img2 radius" />
-        <img src="./images/img3.jpeg" alt="" class="img3 radius" />
+      <h1 class="heading">Pocket <br><span class="sub-heading">Point-of-Sale</span></h1>
+
+      <div class="hero-tag tag-br">
+        <span>Free Trial</span>
       </div>
 
-      <div id="section5">
-        <h2 class="heading">Top Picks</h2>
-        <div class="product-section">
-          <div class="product">
-            <img src="./images/green.png" alt="" />
-            <div class="name">Audira One</div>
-            <div class="price">₹4,499</div>
-          </div>
-          <div class="product">
-            <div class="name">Audira Pulse</div>
-            <div class="price">₹7,999</div>
-          </div>
-          <div class="product">
-            <img src="./images/black.png" alt="" />
-            <div class="name">Audira Max Pro</div>
-            <div class="price">₹11,499</div>
-          </div>
-        </div>
-      </div>
     </div>
+  </div>
 
-    <div id="section6" class="w-full">
-      <img src="./images/img4.jpg" class="radius" alt="" />
+  <div id="main" class="w-full">
+    <img src="./images/phone.png" alt="PocketPOS App" id="headphone" />
+
+
+
+    <div id="section2">
       <div class="content-wrapper">
-        <h2 class="heading">Pure Escape</h2>
+        <h2 class="heading">Seamless POS Control</h2>
         <p>
-          Step into a world where every note feels alive. Audira
-          headphones are engineered to create a sound experience that
-          surrounds you—deep, rich, and breathtaking.
+          Built for speed, simplicity, and reliability — PocketPOS
+          empowers small businesses with a modern checkout experience
+          that runs on any device, anywhere.
         </p>
-        <p>
-          Whether you're working, relaxing, or moving, our design blends
-          comfort and clarity for every lifestyle. You don’t just listen —
-          you feel the moment.
-        </p>
+        <a href="" class="btn-gradient radius">
+          <span>Start Free Trial</span>
+          <i data-lucide="scan-barcode" class="btn-icon"></i>
+        </a>
+      </div>
+      <div class="feature-wrapper">
+
+        <div class="feature-card-holder">
+          <div class="feature-bg-number">01</div>
+          <div class="feature-box radius">
+            <div class="feature-icon">
+              <i data-lucide="scan-barcode"></i>
+            </div>
+            <div class="feature-name">Instant Checkout</div>
+            <div class="feature-detail">
+              Process sales in seconds with barcode scanning and a
+              streamlined cart interface.
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-card-holder">
+          <div class="feature-bg-number">02</div>
+          <div class="feature-box radius">
+            <div class="feature-icon">
+              <i data-lucide="package-check"></i>
+            </div>
+            <div class="feature-name">Smart Inventory</div>
+            <div class="feature-detail">
+              Track stock in real-time, get low-stock alerts, and manage
+              products effortlessly.
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-card-holder">
+          <div class="feature-bg-number">03</div>
+          <div class="feature-box radius">
+            <div class="feature-icon">
+              <i data-lucide="wifi-off"></i>
+            </div>
+            <div class="feature-name">Offline-Ready</div>
+            <div class="feature-detail">
+              Keep selling even without internet — data syncs automatically
+              when you're back online.
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <footer class="w-full">
-      <img src="./images/logo.png" alt="" class="logo" />
-      <div class="social">
-        <a href="#"><img src="./images/fb.png" alt="" /></a>
-        <a href="#"><img src="./images/insta.png" alt="" /></a>
+    <div id="section-inventory">
+      <div class="content-wrapper">
+        <h2 class="heading">Inventory Intelligence</h2>
+        <p>
+          From warehouse to shelf, PocketPOS gives you full visibility
+          over every product. Smart tracking, automatic alerts, and
+          real-time sync across all your locations.
+        </p>
+        <a href="" class="btn-gradient radius">
+          <span>Explore Inventory</span>
+          <i data-lucide="package-search" class="btn-icon"></i>
+        </a>
       </div>
-    </footer>
+      <div class="feature-wrapper">
 
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script> 
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
-    <script src="https://unpkg.com/lenis@1.3.20/dist/lenis.min.js"></script>
-    <script src="main.js"></script>
-  </body>
+        <div class="feature-card-holder">
+          <div class="feature-bg-number">01</div>
+          <div class="feature-box radius">
+            <div class="feature-icon">
+              <i data-lucide="git-merge"></i>
+            </div>
+            <div class="feature-name">Multi-Location Sync</div>
+            <div class="feature-detail">
+              Manage inventory across multiple stores with real-time
+              stock synchronization and transfers.
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-card-holder">
+          <div class="feature-bg-number">02</div>
+          <div class="feature-box radius">
+            <div class="feature-icon">
+              <i data-lucide="refresh-cw"></i>
+            </div>
+            <div class="feature-name">Smart Reordering</div>
+            <div class="feature-detail">
+              Automatic purchase order suggestions based on sales
+              velocity and minimum stock thresholds.
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-card-holder">
+          <div class="feature-bg-number">03</div>
+          <div class="feature-box radius">
+            <div class="feature-icon">
+              <i data-lucide="timer"></i>
+            </div>
+            <div class="feature-name">Expiry Tracking</div>
+            <div class="feature-detail">
+              Never lose stock to expired goods — get proactive alerts
+              before products reach their shelf life.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="section3">
+      <h2 class="heading">Analytics</h2>
+      <div class="content-wrapper">
+        <video width="500" height="auto" autoplay loop muted class="radius">
+          <source src="./images/video.mp4" type="video/mp4" />
+        </video>
+        <div class="content">
+          <p>
+            Built for the modern retailer, PocketPOS delivers real-time
+            sales analytics so clear, you can spot trends at a glance.
+            From daily revenue to top-selling products — insight is instant.
+          </p>
+          <p>
+            Whether you're managing one store or scaling across locations,
+            the dashboard adapts to your needs. With PocketPOS Analytics,
+            data becomes your competitive edge — actionable, visual, powerful.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="section4">
+      <img src="./images/img1.jpeg" alt="" class="img1 radius" />
+      <img src="./images/img2.jpeg" alt="" class="img2 radius" />
+      <img src="./images/img3.jpeg" alt="" class="img3 radius" />
+    </div>
+
+    <div id="section5">
+      <div class="plans-card-holder">
+        <div class="plans-bg-text">Our Plans</div>
+
+        <div class="plans-main-card radius">
+
+          <div class="product side-product left-product">
+            <img src="./images/phone1.png" alt="PocketPOS Reader" />
+          </div>
+
+          <div class="card-marquee-container">
+            <div class="marquee-fade-left"></div>
+            <div class="marquee-track">
+              <div class="marquee-content">MENT • FINANCE MANAGEMENT • SMART POS • AGRI TECH • REVOLUTIONIZE •&nbsp;
+              </div>
+              <div class="marquee-content" aria-hidden="true">MENT • FINANCE MANAGEMENT • SMART POS • AGRI TECH •
+                REVOLUTIONIZE •&nbsp;</div>
+            </div>
+            <div class="marquee-fade-right"></div>
+          </div>
+
+          <div class="product center-product">
+            <div class="name">PocketPOS Growth</div>
+            <button class="button">
+              <div class="outline"></div>
+              <div class="state state--default">
+                <div class="icon">
+                  <!-- Clean Minimalist Download Icon -->
+                  <svg width="1.5em" height="1.5em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g style="filter: url(#shadow)">
+                      <path d="M12 3V16M12 16L7 11M12 16L17 11" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M4 20H20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"></path>
+                    </g>
+                    <defs>
+                      <filter id="shadow">
+                        <feDropShadow dx="0" dy="1" stdDeviation="0.6" flood-opacity="0.2"></feDropShadow>
+                      </filter>
+                    </defs>
+                  </svg>
+                </div>
+                <p>
+                  <span style="--i:0">D</span>
+                  <span style="--i:1">o</span>
+                  <span style="--i:2">w</span>
+                  <span style="--i:3">n</span>
+                  <span style="--i:4">l</span>
+                  <span style="--i:5">o</span>
+                  <span style="--i:6">a</span>
+                  <span style="--i:7">d</span>
+                </p>
+              </div>
+              <div class="state state--sent">
+                <div class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="1.2em" width="1.2em"
+                    stroke-width="2.5px" stroke="currentColor">
+                    <g style="">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </g>
+                  </svg>
+                </div>
+                <p>
+                  <span style="--i:5">D</span>
+                  <span style="--i:6">o</span>
+                  <span style="--i:7">w</span>
+                  <span style="--i:8">n</span>
+                  <span style="--i:9">l</span>
+                  <span style="--i:10">o</span>
+                  <span style="--i:11">a</span>
+                  <span style="--i:12">d</span>
+                  <span style="--i:13">e</span>
+                  <span style="--i:14">d</span>
+                </p>
+              </div>
+            </button>
+          </div>
+
+          <div class="product side-product right-product">
+            <img src="./images/phone1.png" alt="PocketPOS Retail Kit" />
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer id="section6" class="w-full">
+    <img src="./images/img4.jpg" class="radius-top-only" alt="" />
+    <div class="content-wrapper">
+      <h2 class="heading">Grow Your Store</h2>
+      <p>
+        Step into a world where every transaction is effortless. PocketPOS
+        is engineered to create a retail experience that empowers
+        you — fast, reliable, and beautifully simple.
+      </p>
+
+      <div class="footer-nav">
+        <a href="#section1" class="nav-tube">Home</a>
+        <a href="#section2" class="nav-tube">Features</a>
+        <a href="#section5" class="nav-tube">Plans</a>
+        <a href="#section6" class="nav-tube">About</a>
+      </div>
+
+      <div class="footer-socials">
+        <a href="#" class="social-icon">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="#" class="social-icon">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="#" class="social-icon">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+
+      <div class="footer-copyright">
+        &copy; 2026 PocketPOS. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.3.20/dist/lenis.min.js"></script>
+  <script src="main.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+
 </html>

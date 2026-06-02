@@ -38,6 +38,7 @@ ScrollTrigger.matchMedia({
     const headphone = document.querySelector("#headphone");
 
     const s2 = document.querySelector("#section2");
+    const sInv = document.querySelector("#section-inventory");
     const s3 = document.querySelector("#section3");
     const s4 = document.querySelector("#section4");
     const s5 = document.querySelector("#section5");
@@ -56,6 +57,24 @@ ScrollTrigger.matchMedia({
       y: () => getPos(s2, 0.78, 0.35).y,
       width: "32vw",
       rotate: 90,
+      ease: "power1.inOut",
+      immediateRender: false
+    });
+
+    // -------------------------
+    // SECTION INVENTORY → LEFT SIDE
+    // -------------------------
+    gsap.to(headphone, {
+      scrollTrigger: {
+        trigger: sInv,
+        start: "top bottom",
+        end: "center center",
+        scrub: 1.2,
+      },
+      x: () => getPos(sInv, 0.22, 0.35).x,
+      y: () => getPos(sInv, 0.22, 0.35).y,
+      width: "32vw",
+      rotate: -90,
       ease: "power1.inOut",
       immediateRender: false
     });
@@ -129,6 +148,17 @@ ScrollTrigger.matchMedia({
     gsap.from("#section2 .content-wrapper", {
       scrollTrigger: {
         trigger: "#section2",
+        start: "-50% bottom",
+        end: "center center",
+        scrub: true,
+      },
+      y: "140%",
+      ease: "power1.inOut"
+    });
+
+    gsap.from("#section-inventory .content-wrapper", {
+      scrollTrigger: {
+        trigger: "#section-inventory",
         start: "-50% bottom",
         end: "center center",
         scrub: true,
