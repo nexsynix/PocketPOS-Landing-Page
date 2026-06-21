@@ -37,14 +37,17 @@ ScrollTrigger.matchMedia({
   // DESKTOP: 1025px and wider (Full Side Glides)
   // -----------------------------------------------------------------
   "(min-width: 1025px)": function () {
-    const headphone = document.querySelector("#headphone");
+    const phone = document.querySelector("#phone");
     const s2 = document.querySelector("#section2");
     const sInv = document.querySelector("#section-inventory");
     const s3 = document.querySelector("#section3");
     const s4 = document.querySelector("#section4");
     const s5 = document.querySelector("#section5");
 
-    gsap.to(headphone, {
+    // Force default visible block layout on desktop
+    gsap.set(phone, { display: "block", opacity: 1, scale: 1 });
+
+    gsap.to(phone, {
       scrollTrigger: {
         trigger: s2,
         start: "top bottom",
@@ -59,7 +62,7 @@ ScrollTrigger.matchMedia({
       immediateRender: false
     });
 
-    gsap.to(headphone, {
+    gsap.to(phone, {
       scrollTrigger: {
         trigger: sInv,
         start: "top bottom",
@@ -74,7 +77,7 @@ ScrollTrigger.matchMedia({
       immediateRender: false
     });
 
-    gsap.to(headphone, {
+    gsap.to(phone, {
       scrollTrigger: {
         trigger: s3,
         start: "top bottom",
@@ -89,7 +92,7 @@ ScrollTrigger.matchMedia({
       immediateRender: false
     });
 
-    gsap.to(headphone, {
+    gsap.to(phone, {
       scrollTrigger: {
         trigger: s4,
         start: "top bottom",
@@ -104,7 +107,7 @@ ScrollTrigger.matchMedia({
       immediateRender: false
     });
 
-    gsap.to(headphone, {
+    gsap.to(phone, {
       scrollTrigger: {
         trigger: s5,
         start: "center bottom",
@@ -204,14 +207,16 @@ ScrollTrigger.matchMedia({
   // TABLET: 769px to 1024px (Scaled side glides with safety offsets)
   // -----------------------------------------------------------------
   "(min-width: 769px) and (max-width: 1024px)": function () {
-    const headphone = document.querySelector("#headphone");
+    const phone = document.querySelector("#phone");
     const s2 = document.querySelector("#section2");
     const sInv = document.querySelector("#section-inventory");
     const s3 = document.querySelector("#section3");
     const s4 = document.querySelector("#section4");
     const s5 = document.querySelector("#section5");
 
-    gsap.to(headphone, {
+    gsap.set(phone, { display: "block", opacity: 1, scale: 1 });
+
+    gsap.to(phone, {
       scrollTrigger: {
         trigger: s2,
         start: "top bottom",
@@ -226,7 +231,7 @@ ScrollTrigger.matchMedia({
       immediateRender: false
     });
 
-    gsap.to(headphone, {
+    gsap.to(phone, {
       scrollTrigger: {
         trigger: sInv,
         start: "top bottom",
@@ -241,7 +246,7 @@ ScrollTrigger.matchMedia({
       immediateRender: false
     });
 
-    gsap.to(headphone, {
+    gsap.to(phone, {
       scrollTrigger: {
         trigger: s3,
         start: "top bottom",
@@ -256,7 +261,7 @@ ScrollTrigger.matchMedia({
       immediateRender: false
     });
 
-    gsap.to(headphone, {
+    gsap.to(phone, {
       scrollTrigger: {
         trigger: s4,
         start: "top bottom",
@@ -271,7 +276,7 @@ ScrollTrigger.matchMedia({
       immediateRender: false
     });
 
-    gsap.to(headphone, {
+    gsap.to(phone, {
       scrollTrigger: {
         trigger: s5,
         start: "center bottom",
@@ -333,78 +338,52 @@ ScrollTrigger.matchMedia({
   },
 
   // -----------------------------------------------------------------
-  // MOBILE: 768px and narrower (Centered fluid flight path)
+  // MOBILE: 768px and narrower (Targeted Section Appearances)
   // -----------------------------------------------------------------
   "(max-width: 768px)": function () {
-    const headphone = document.querySelector("#headphone");
-    const s2 = document.querySelector("#section2");
-    const sInv = document.querySelector("#section-inventory");
-    const s3 = document.querySelector("#section3");
+    const phone = document.querySelector("#phone");
+    const s1 = document.querySelector("#section1");
     const s4 = document.querySelector("#section4");
     const s5 = document.querySelector("#section5");
 
-    // Center phone on mobile flight path to act as a sleek responsive section divider
-    gsap.to(headphone, {
+    // Force default visual block setup for mobile execution
+    gsap.set(phone, { display: "block" });
+
+    // 1. Fade OUT when leaving Section 1 (Static inside Section 1)
+    gsap.to(phone, {
       scrollTrigger: {
-        trigger: s2,
-        start: "top bottom",
-        end: "center center",
-        scrub: 1.2,
+        trigger: s1,
+        start: "center top",
+        end: "bottom top",
+        scrub: true
       },
-      x: () => getPos(s2, 0.95, 0.35).x,
-      y: () => getPos(s2, 0.95, 0.35).y,
-      width: "230px",
-      rotate: 60,
-      ease: "power1.inOut",
-      immediateRender: false
+      opacity: 0,
+      ease: "none"
     });
 
-    gsap.to(headphone, {
-      scrollTrigger: {
-        trigger: sInv,
-        start: "top bottom",
-        end: "center center",
-        scrub: 1.2,
-      },
-      x: () => getPos(sInv, 0.05, 0.35).x,
-      y: () => getPos(sInv, 0.05, 0.35).y,
-      width: "230px",
-      rotate: -60,
-      ease: "power1.inOut",
-      immediateRender: false
-    });
+    // 2. Clear Fade IN & Reset Scale specifically inside Section 4
+    gsap.fromTo(phone, 
+      { opacity: 0, scale: 0.6 },
+      {
+        scrollTrigger: {
+          trigger: s4,
+          start: "top bottom",
+          end: "center center",
+          scrub: 1.2
+        },
+        x: () => getPos(s4, 0.5, 0.5).x,
+        y: () => getPos(s4, 0.5, 0.5).y,
+        width: "220px",
+        rotate: 0,
+        opacity: 1,
+        scale: 1,
+        ease: "power1.inOut",
+        immediateRender: false
+      }
+    );
 
-    gsap.to(headphone, {
-      scrollTrigger: {
-        trigger: s3,
-        start: "top bottom",
-        end: "center center",
-        scrub: 1.2,
-      },
-      x: () => getPos(s3, 0.95, 0.45).x,
-      y: () => getPos(s3, 0.95, 0.45).y,
-      width: "210px",
-      rotate: 45,
-      ease: "power1.inOut",
-      immediateRender: false
-    });
-
-    gsap.to(headphone, {
-      scrollTrigger: {
-        trigger: s4,
-        start: "top bottom",
-        end: "center center",
-        scrub: 1.2,
-      },
-      x: () => getPos(s4, 0.5, 0.5).x,
-      y: () => getPos(s4, 0.5, 0.5).y,
-      width: "220px",
-      rotate: 0,
-      ease: "power1.inOut",
-      immediateRender: false
-    });
-
-    gsap.to(headphone, {
+    // 3. Keep original transition going from Section 4 down into Section 5
+    gsap.to(phone, {
       scrollTrigger: {
         trigger: s5,
         start: "center bottom",
@@ -461,20 +440,22 @@ ScrollTrigger.matchMedia({
 // -----------------------------
 // GLOBAL LOAD & INTERACTIVE ANIMATIONS
 // -----------------------------
-const headphone = document.querySelector("#headphone");
+const sectionTargets = document.querySelectorAll("#section1, #section2, #section-inventory, #section3, #section4, #section5, #section6");
+const phone = document.querySelector("#phone");
 
-if (headphone) {
-  gsap.from(headphone, {
+if (phone) {
+  gsap.from(phone, {
     opacity: 0,
     scale: 0.6,
-    rotateX: -20,     
-    rotateY: 15,      
-    rotateZ: -10,     
-    duration: 1.5,    
+    rotateX: -20,
+    rotateY: 15,
+    rotateZ: -10,
+    duration: 1.5,
     ease: "power2.out",
     delay: 0.8
   });
-
+  
+  // NOTE: Removed manual window scroll layout toggles that fought with mobile GSAP logic.
 }
 
 // Hero section Heading word-by-word SplitText entry
@@ -503,6 +484,38 @@ if (heroHeading) {
 // -----------------------------
 const menuToggle = document.getElementById("menuToggle");
 const nav = document.querySelector("nav");
+const navLinks = document.querySelectorAll("header nav a[href^='#']");
+
+function setActiveNav(linkId) {
+  navLinks.forEach(link => {
+    const href = link.getAttribute("href");
+    link.classList.toggle("active", href === `#${linkId}`);
+  });
+}
+
+if (navLinks.length) {
+  const sectionObserver = new IntersectionObserver((entries) => {
+    const visibleEntry = entries
+      .filter(entry => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+    if (!visibleEntry) return;
+
+    const id = visibleEntry.target.id;
+    if (id === "section-inventory") {
+      setActiveNav("section2");
+    } else if (id === "section6") {
+      setActiveNav("section5");
+    } else {
+      setActiveNav(id);
+    }
+  }, {
+    rootMargin: "-25% 0px -55% 0px",
+    threshold: [0.15, 0.35, 0.5]
+  });
+
+  sectionTargets.forEach(section => sectionObserver.observe(section));
+}
 
 if (menuToggle && nav) {
   menuToggle.addEventListener("click", () => {
@@ -512,8 +525,8 @@ if (menuToggle && nav) {
   });
 
   // Automatically collapse the navigation drawer on link selection
-  const navLinks = nav.querySelectorAll("a");
-  navLinks.forEach(link => {
+  const activeLinks = nav.querySelectorAll("a");
+  activeLinks.forEach(link => {
     link.addEventListener("click", () => {
       menuToggle.classList.remove("active");
       nav.classList.remove("active");
@@ -530,4 +543,3 @@ ScrollTrigger.addEventListener("refresh", () => {
 });
 
 ScrollTrigger.refresh();
-

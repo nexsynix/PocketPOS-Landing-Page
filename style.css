@@ -225,7 +225,7 @@ nav ul a.active {
   overflow: hidden;
 }
 
-#headphone {
+#phone {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -567,6 +567,17 @@ nav ul a.active {
   box-shadow: 0 0 30px #73442536;
 }
 
+.silent-loop {
+  pointer-events: none; /* Blocks all hover popups and clicks entirely */
+  user-select: none;
+  border: none;
+}
+
+.radius {
+  border-radius: 20px; /* Gives the iframe those clean rounded corners */
+  overflow: hidden;    /* Keeps the video clipped inside the rounded box */
+}
+
 #section3 .content {
   max-width: 500px;
   margin-left: auto;
@@ -586,16 +597,16 @@ nav ul a.active {
 }
 
 #section4 .img1 {
-  max-width: 260px;
+  max-width: 370px;
   top: 12%;
   left: 3%;
   transform: rotate(15deg);
 }
 
 #section4 .img2 {
-  max-width: 470px;
-  right: 4%;
-  top: 22%;
+  max-width: 400px;
+  right: 7%;
+  top: 18%;
   transform: rotate(14deg);
 }
 
@@ -707,14 +718,16 @@ nav ul a.active {
   display: flex;
   align-items: center;
   gap: 5vw;
-  padding: 0 10rem;
+  padding: 0 6rem 0;
   overflow: hidden;
 }
 
-.footer-img{
+.footer-img {
   width: 50%;
   display: flex;
   flex-direction: column;
+  align-self: flex-end;
+  margin-top: auto;
 }
 
 #section6 img {
@@ -723,9 +736,10 @@ nav ul a.active {
 
 #section6 .content-wrapper {
   max-width: 540px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-
+  align-items: flex-start;
 }
 
 #section6 p {
@@ -799,6 +813,22 @@ nav ul a.active {
   border-top: 1px solid #e0d5cc;
   padding-top: 1.5rem;
   margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%; 
+}
+
+.footer-link {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600; 
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: #1389f7; 
+  text-decoration: none;
 }
 
 
@@ -1117,7 +1147,7 @@ body.menu-open {
 
 /* --- 2. Tablets (Landscape) / Small Laptops (max-width: 1024px) --- */
 @media (max-width: 1024px) {
-  #headphone {
+  #phone {
     width: clamp(250px, 32vw, 450px);
   }
 
@@ -1148,6 +1178,10 @@ body.menu-open {
 @media (max-width: 991px) {
   .w-full {
     width: calc(100vw - 4rem);
+  }
+
+  #section6 {
+    padding-inline: 1.5rem;
   }
 
   /* Responsive Header Navigation Drawer */
@@ -1336,7 +1370,6 @@ body.menu-open {
     max-width: 480px;
     border-radius: 24px;
     margin: 0 auto;
-    box-shadow: 0 12px 35px rgba(115, 68, 37, 0.15);
   }
 
   #section6 .content-wrapper {
@@ -1355,7 +1388,21 @@ body.menu-open {
     width: calc(100vw - 2.5rem);
   }
 
-  #headphone {
+  #section6 {
+    padding: 0 1rem 3rem;
+  }
+
+  #section6 .content-wrapper {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-nav,
+  .footer-socials {
+    justify-content: center;
+  }
+
+  #phone {
     width: clamp(180px, 46vw, 240px);
     filter: drop-shadow(4px 18px 5px rgba(0, 0, 0, 0.16));
   }
@@ -1621,8 +1668,8 @@ body.menu-open {
   }
 
   .plans-bg-text {
-    font-size: 3.8rem;
-    top: -42px;
+    font-size: 2.5rem;
+    top: -30px;
   }
 
   .center-product .name {
@@ -1639,9 +1686,9 @@ body.menu-open {
 
 
 .app-screenshots-section {
-  padding: 100px 20px;
+  padding: 60px 20px 80px;
   overflow: hidden;
-  margin-bottom: 10rem;
+  margin-bottom: 5rem;
 }
 
 .section-container {
@@ -1666,8 +1713,8 @@ body.menu-open {
   align-items: center;
   justify-content: center;
   position: relative;
-  margin-top: 40px;
-  height: 620px; /* Comfort height to cover scaling frames smoothly */
+  margin-top: 16px;
+  height: 620px;
 }
 
 .carousel-track {
@@ -1788,8 +1835,13 @@ body.menu-open {
 }
 
 @media (max-width: 768px) {
+  .app-screenshots-section {
+    padding: 28px 14px 56px;
+    margin-bottom: 3rem;
+  }
+
   .section-header h2 { font-size: 32px; }
-  .carousel-container { height: 540px; }
+  .carousel-container { height: 540px; margin-top: 8px; }
   .carousel-slide { width: 230px; }
   .carousel-slide.side-left { transform: translateX(-160px) scale(0.8); opacity: 0.4; }
   .carousel-slide.side-right { transform: translateX(160px) scale(0.8); opacity: 0.4; }
